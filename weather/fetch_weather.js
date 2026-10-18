@@ -26,7 +26,7 @@ function displayWeatherTable(weatherJson) {
         let tableRow = document.createElement('tr')
 
         // Get the period name ex. Tonight, Monday, Monday Night and add to the table
-        console.log(forecastPeriodData) //
+        console.log(forecastPeriodData)
         let periodName = forecastPeriodData.name
         console.log(periodName)
 
@@ -56,6 +56,15 @@ function displayWeatherTable(weatherJson) {
         let detailedForecastTableData = document.createElement('td')
         detailedForecastTableData.innerHTML = detailedForecast
         tableRow.appendChild(detailedForecastTableData)
+
+         // Add Wind Speed and Wind Direction Column
+        let windSpeed = forecastPeriodData.windSpeed          // ex., "5 mph"
+        let windDirection = forecastPeriodData.windDirection  // ex., "NE"
+        let windString = windSpeed + ', ' + windDirection      // Combine speed and direction as "5 mph, NE"
+
+        let windTableData = document.createElement('td')
+        windTableData.innerHTML = windString
+        tableRow.appendChild(windTableData)
 
 
         // Add table row (with all the new td elements in it)
