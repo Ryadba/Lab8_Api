@@ -77,9 +77,15 @@
 
                     let unitsAvailable = availability.units_available
                     console.log(unitsAvailable)
+                    // Display the number of units available
 
                     unitsAvailableDisplay.innerHTML = unitsAvailable
 
+                })
+                .catch(error => {
+                    console.log(error) // log error for developers
+                    // error message when failing to connect
+                    alert('Sorry, could not fetch')
                 })
         })
 
